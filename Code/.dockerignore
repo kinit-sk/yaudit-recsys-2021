@@ -1,0 +1,13 @@
+**/.idea
+**/.vscode
+**/__pycache__
+**/.pytest_cache
+**/logs
+**/.ipynb_checkpoints
+
+/.git
+/.dockerignore
+/.gitignore
+/Dockerfile
+/bot/Downloads
+

@@ -1,0 +1,2 @@
+class VideoNotAvailableException(Exception):
+    pass

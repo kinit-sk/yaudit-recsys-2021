@@ -1,0 +1,47 @@
+version: "3"
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: bot.Dockerfile
+    container_name: yaudit_bot_${YAUDIT_BOT_IDENTIFICATION:-simple}
+    environment:
+      - YAUDIT_TOPIC_ID=${YAUDIT_TOPIC_ID:-1}
+      - YAUDIT_ACCOUNT_ID=${YAUDIT_ACCOUNT_ID:-1}
+      - YAUDIT_CONFIGURATION_ID=${YAUDIT_CONFIGURATION_ID:-1}
+      - YAUDIT_RUN_HEADLESS=${YAUDIT_RUN_HEADLESS:-true}
+      - CHROME_PORT=${CHROME_PORT:-4444}
+    volumes:
+      - "./yaudit:/app"
+    entrypoint: '/bin/bash'
+    command: 'python3 main.py'
+
+  chrome:
+    image: selenium/standalone-chrome
+    shm_size: '4g'
+    container_name: chrome_${YAUDIT_ENV:-staging}
+    ports:
+      - ${YAUDIT_CHROME_PORT:-4444}:${YAUDIT_CHROME_PORT:-4444}
+    network_mode: "host"
+
+  postgres:
+    image: postgres:11
+    shm_size: '1gb'
+    container_name: postgres_${YAUDIT_ENV:-staging}
+    environment:
+      POSTGRES_USER: ${YAUDIT_POSTGRES_SUPERUSER_USERNAME:-postgres}
+      POSTGRES_PASSWORD: ${YAUDIT_POSTGRES_SUPERUSER_PASSWORD:-postgres}
+      POSTGRES_DB: ${YAUDIT_POSTGRES_DB:-yaudit}
+      TZ: ${YAUDITTZ:-Europe/Bratislava}
+      PGTZ: ${YAUDIT_TZ:-Europe/Bratislava}
+    volumes:
+      - yaudit-postgres-data:/var/lib/postgresql/data
+    ports:
+      - ${YAUDIT_POSTGRES_PORT_EXPOSE:-5432}:${YAUDIT_POSTGRES_PORT:-5432}
+    network_mode: "host"
+
+
+volumes:
+  yaudit-postgres-data:
+    external:
+      name: yaudit-postgres-data

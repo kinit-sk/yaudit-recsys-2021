@@ -1,0 +1,12 @@
+selenium
+beautifulsoup4
+lxml
+pandas
+numpy
+fake_useragent
+jupyter
+SQLAlchemy
+alembic
+psycopg2
+markdown2
+youtube-data-api==0.0.20
