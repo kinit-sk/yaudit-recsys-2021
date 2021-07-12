@@ -8,6 +8,10 @@ The negative effects of misinformation filter bubbles in adaptive systems have b
 
 ## Structure of repository
 
+
+## Source code for sockpuppeting bots
+
+
 ## Datasets
 
 
@@ -18,3 +22,7 @@ The negative effects of misinformation filter bubbles in adaptive systems have b
 
 
 ### Home page results
+
+
+## Notebooks for data analysis
+
