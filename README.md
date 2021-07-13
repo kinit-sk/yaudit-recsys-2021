@@ -49,7 +49,31 @@ Please refer to the paper for discussion of annotation classes.
 
 ### Recommendations
 
+Each row represents one recommended video displayed on YouTube in the top-20
+recommendations beside watched videos.
 
+Please refer to the paper for discussion of annotation classes.
+
+| Column                 | Example                    | Description                                   |
+| ---------------------- | -------------------------- | --------------------------------------------- |
+| watched\_youtube\_id   | 7aNnDjQxBNQ                | YouTube ID of the watched video next to which the recommendations were displayed |
+| youtube\_id            | nJZBqmGLHQ8                | YouTube ID of the recommended video |
+| bot\_id                | 5                          | Identifier of the bot watching the video |
+| topic                  | 911                        | Identifier of the conspiratory topic of videos the bot was watching and searching |
+| experiment             | 911                        | Identifier of the overall executed experiment (in this case, same as topic) |
+| position               | 9                          | Position of the recommended video within list of recommendations |
+| sequence\_number       | 144                        | Ordering of this video watching action within all actions executed by the bot |
+| seed\_sequence         | 32                         | Ordering of this video watching action within video watching actions executed by the bot (0 to 80) |
+| sequence\_name         | 32                         | Label for ordering of this video watching action within video watching actions executed by the bot (0 to 80) |
+| annotation             | 5                          | Number code of the annotation given to the recommended video with respect to the topic |
+| normalized\_annotation | 0                          | Number code of the annotation normalized to range -1 to 1 |
+| annotation\_label      | (5) not about misinfo      | Readable label of the annotation |
+| normalized\_label      | other                      | Readable label of the annotation normalized to range -1 to 1 |
+| started\_at            | 2021-03-25 10:00:33.745248 | Timestamp of the video watching action |
 
 ## Notebooks for data analysis
 
+There are two Jupyter Notebooks contained in this folder:
+
+1. `rq1-compare-results-with-hussein.ipynb` contains analyses related to the first research question discussed in the paper.
+1. `rq2-statistical-tests.ipynb` contains analyses related to the second research question discussed in the paper.
