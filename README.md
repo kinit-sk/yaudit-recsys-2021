@@ -20,10 +20,11 @@ See the README file under the `Code` folder to learn more.
 
 ## Datasets
 
-We provide two CSV datasets:
+We provide three CSV datasets:
 
 1. `search_results.csv` containing annotated and processed top-20 results for queries executed after watching videos on YouTube.
 2. `recommendations.csv` containing annotated and processed top-20 recommendations shown next to watched videos on YouTube.
+3. `home_page_results.csv` containing collected and processed results from homepage visits executed after watching videos.
 
 ### Search results
 
@@ -70,6 +71,30 @@ Please refer to the paper for discussion of annotation classes.
 | annotation\_label      | (5) not about misinfo      | Readable label of the annotation |
 | normalized\_label      | other                      | Readable label of the annotation normalized to range -1 to 1 |
 | started\_at            | 2021-03-25 10:00:33.745248 | Timestamp of the video watching action |
+
+### Homepage results
+
+Each row represents one homepage result displayed on YouTube.
+
+Please refer to the paper for discussion of annotation classes.
+
+*Note:* This dataset was not annotated. Some annotations are still present as a result of the videos also appearing in recommendations or search results.
+
+| Column                 | Example                    | Description                                   |
+| ---------------------- | -------------------------- | --------------------------------------------- |
+| youtube\_id            | Ds390gg6Kqs                | YouTube ID of the video appearing on homepage  |
+| bot\_id                | 4                          | Identifier of the bot performing the visit to homepage |
+| topic                  | chemtrails                 | Identifier of the conspiratory topic of videos the bot was watching and searching |
+| experiment             | chemtrails                 | Identifier of the overall executed experiment (in this case, same as topic) |
+| position               | 15                         | Position within the list of homepage results, going from top left to bottom right |
+| sequence\_number       | 1                          | Ordering of this homepage action within all actions executed by the bot |
+| seed\_sequence         | 0                          | Ordering of this homepage action within search actions executed by the bot (0 to 80) |
+| sequence\_name         | A: start                   | Label for ordering of this homepage action within homepage actions executed by the bot (0 to 80) - in this case, corresponds to 0 |
+| annotation             | -2                         | Number code of the annotation given to the video with respect to the topic (in this case, the video was not annotated) |
+| normalized\_annotation |                            | Number code of the annotation normalized to range -1 to 1. Left empty as the video was not annotated |
+| annotation\_label      | not annotated              | Readable label of the annotation |
+| normalized\_label      | not annotated              | Readable label of the annotation normalized to range -1 to 1 |
+| started\_at            | 2021-03-10 10:39:54.398890 | Timestamp of the homepage action |
 
 ## Notebooks for data analysis
 
