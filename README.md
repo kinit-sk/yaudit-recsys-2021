@@ -18,6 +18,9 @@ This repository is structured in three folders:
 
 See the README file under the `Code` folder to learn more.
 
+*Note:* In our experiments, the bot was running in Google Chrome browser version 88, with chromedriver version 88.0.4324.96. The python version used was 3.8.7 with the Dockerfile being based on Debian version 10.7.
+As adblock, we used uBlockOrigin, which is provided in the code as `.crx` file.
+
 ## Datasets
 
 We provide three CSV datasets:
