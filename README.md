@@ -1,6 +1,11 @@
 # An Audit of Misinformation Filter Bubbles on YouTube: Bubble Bursting and Recent Behavior Changes
 
-This repository contains supplementary material for the paper published at ACM RecSys 2021.
+This repository contains supplementary material for the paper published at ACM RecSys 2021, available here https://dl.acm.org/doi/10.1145/3460231.3474241.
+
+### Citing the Paper:
+If you make use of any data or modules in this repository, please cite the following paper:
+> Matus Tomlein, Branislav Pecher, Jakub Simko, Ivan Srba, Robert Moro, Elena Stefancova, Michal Kompan, Andrea Hrckova, Juraj Podrouzek, and Maria Bielikova. 2021. An Audit of Misinformation Filter Bubbles on YouTube: Bubble Bursting and Recent Behavior Changes. In <i>Fifteenth ACM Conference on Recommender Systems</i> (<i>RecSys '21</i>). Association for Computing Machinery, New York, NY, USA, 1–11. DOI: https://doi.org/10.1145/3460231.3474241
+
 
 ## Abstract
 
@@ -13,6 +18,7 @@ This repository is structured in three folders:
 1. Code – source code for sockpuppeting bots
 2. Data – collected, processed and annotated datasets
 3. Notebooks – notebooks for data analysis containing results discussed in the paper
+
 
 ## Source code for sockpuppeting bots
 
