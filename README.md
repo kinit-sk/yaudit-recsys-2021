@@ -1,6 +1,6 @@
 # An Audit of Misinformation Filter Bubbles on YouTube: Bubble Bursting and Recent Behavior Changes
 
-This repository contains supplementary material for the paper published at ACM RecSys 2021, available here https://dl.acm.org/doi/10.1145/3460231.3474241.
+This repository contains supplementary material for the paper published at ACM RecSys 2021 and the paper submitted to ACM TORS 2022 (under review), available here https://dl.acm.org/doi/10.1145/3460231.3474241.
 
 ### Citing the Paper:
 If you make use of any data or modules in this repository, please cite the following paper:
@@ -29,11 +29,16 @@ As adblock, we used uBlockOrigin, which is provided in the code as `.crx` file.
 
 ## Datasets
 
-We provide three CSV datasets:
+We provide three CSV datasets with raw data:
 
 1. `search_results.csv` containing annotated and processed top-20 results for queries executed after watching videos on YouTube.
 2. `recommendations.csv` containing annotated and processed top-20 recommendations shown next to watched videos on YouTube.
 3. `home_page_results.csv` containing collected and processed results from homepage visits executed after watching videos.
+
+We also provide two additional datasets that contain aggregated data that includes automatically generated predictions using a machine learning model:
+
+1. `recommendations_with_predicted_grouped.csv` containing misinformation score and ratio of annotated to automatically predicted labels for top-10 recommendations grouped by misinformation topic and sequence index within the experiment.
+2. `home_page_with_predicted_grouped.csv` containing misinformation score and ratio of annotated to automatically predicted labels for home page results grouped by misinformation topic and sequence index within the experiment.
 
 ### Search results
 
@@ -105,9 +110,21 @@ Please refer to the paper for discussion of annotation classes.
 | normalized\_label      | not annotated              | Readable label of the annotation normalized to range -1 to 1 |
 | started\_at            | 2021-03-10 10:39:54.398890 | Timestamp of the homepage action |
 
+### Aggregated datasets
+
+The aggregated datasets for top-10 recommendations and home page results also consider automatically predicted annotations. Due to ethical risks, we only publish aggregated statistics.
+
+| Column         | Example    | Description                                   |
+| -------------- | ---------- | --------------------------------------------- |
+| topic          | chemtrails | Identifier of the conspiratory topic of videos the bot was watching and searching |
+| seed\_sequence | 0          | Ordering of this action within all actions executed by the bot (0 to 80) |
+| score | 0.11 | Average number code of the annotation normalized to range -1 to 1 for the considered videos |
+| annotated      |            | Ratio of manually annotated videos out of all considered. Labels for the remaining videos were automatically predicted using machine learning. |
+
 ## Notebooks for data analysis
 
 There are two Jupyter Notebooks contained in this folder:
 
 1. `rq1-compare-results-with-hussein.ipynb` contains analyses related to the first research question discussed in the paper.
 1. `rq2-statistical-tests.ipynb` contains analyses related to the second research question discussed in the paper.
+1. `rq2-trends.ipynb` contains visualizations of changes in misinformation scores over the experiments discussed in the paper.
