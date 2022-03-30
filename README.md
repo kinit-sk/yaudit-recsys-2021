@@ -1,6 +1,6 @@
 # An Audit of Misinformation Filter Bubbles on YouTube: Bubble Bursting and Recent Behavior Changes
 
-This repository contains supplementary material for the paper published at ACM RecSys 2021 and the paper submitted to ACM TORS 2022 (under review), available here https://dl.acm.org/doi/10.1145/3460231.3474241.
+This repository contains supplementary material for the paper published at ACM RecSys 2021 ([available here](https://dl.acm.org/doi/10.1145/3460231.3474241)) and an extended version of the same paper that was submitted to ACM TORS 2022 and is currently under review.
 
 ### Citing the Paper:
 If you make use of any data or modules in this repository, please cite the following paper:
