@@ -29,13 +29,18 @@ As adblock, we used uBlockOrigin, which is provided in the code as `.crx` file.
 
 ## Datasets
 
-We provide three CSV datasets with raw data:
+We provide three CSV datasets with raw data (contained in `raw_data` directory):
 
 1. `search_results.csv` containing annotated and processed top-20 results for queries executed after watching videos on YouTube.
 2. `recommendations.csv` containing annotated and processed top-20 recommendations shown next to watched videos on YouTube.
 3. `home_page_results.csv` containing collected and processed results from homepage visits executed after watching videos.
 
-We also provide two additional datasets that contain aggregated data that includes automatically generated predictions using a machine learning model:
+In addition, we provide two additional datasets with mapping of videos to their normalized labels (contained in `normalized_data` directory):
+
+1. `encountered_videos.csv` containing normalized labels for the videos we encountered and then annotated during experiments. The file was obtained by running the `normalize-annotations.ipynb` notebook.
+2. `seed_videos.csv` containing the videos we used as seed for running the experiments, along with their assigned labels and topics.
+
+We also provide two additional datasets that contain aggregated data that includes automatically generated predictions using a machine learning model (contained in `predicted_data` directory):
 
 1. `recommendations_with_predicted_grouped.csv` containing misinformation score and ratio of annotated to automatically predicted labels for top-10 recommendations grouped by misinformation topic and sequence index within the experiment.
 2. `home_page_with_predicted_grouped.csv` containing misinformation score and ratio of annotated to automatically predicted labels for home page results grouped by misinformation topic and sequence index within the experiment.
@@ -123,8 +128,10 @@ The aggregated datasets for top-10 recommendations and home page results also co
 
 ## Notebooks for data analysis
 
-There are two Jupyter Notebooks contained in this folder:
+There are five Jupyter Notebooks contained in this folder:
 
 1. `rq1-compare-results-with-hussein.ipynb` contains analyses related to the first research question discussed in the paper.
 1. `rq2-statistical-tests.ipynb` contains analyses related to the second research question discussed in the paper.
 1. `rq2-trends.ipynb` contains visualizations of changes in misinformation scores over the experiments discussed in the paper.
+1. `normalize-annotations.ipynb` contains code for obtaining the normalized labels for the videos we annotated using the raw data.
+1. `reimplemented-model-by-hou.ipynb` contains the reimplemented model by Hout et al discussed in the extended version of our paper.
