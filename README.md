@@ -129,10 +129,11 @@ The aggregated datasets for top-10 recommendations and home page results also co
 
 ## Notebooks for data analysis
 
-There are five Jupyter Notebooks contained in this folder:
+There are the following Jupyter Notebooks contained in this folder:
 
 1. `rq1-compare-results-with-hussein.ipynb` contains analyses related to the first research question discussed in the paper.
 1. `rq2-statistical-tests.ipynb` contains analyses related to the second research question discussed in the paper.
 1. `rq2-trends.ipynb` contains visualizations of changes in misinformation scores over the experiments discussed in the paper.
 1. `normalize-annotations.ipynb` contains code for obtaining the normalized labels for the videos we annotated using the raw data.
-1. `reimplemented-model-by-hou.ipynb` contains the reimplemented model by Hout et al. discussed in the extended version of our paper.
+1. `reimplemented-model-by-hou.ipynb` contains the reimplemented model by Hou et al. discussed in the extended version of our paper.
+1. `get-train-data.ipynb` contains code for downloading and processing videos' metadata and transcripts using YouTube's API.

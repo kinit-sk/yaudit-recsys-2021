@@ -12,3 +12,5 @@ sklearn
 jupyter
 xgboost
 nbdev
+google-api-python-client
+youtube-dl
