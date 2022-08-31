@@ -35,7 +35,7 @@ We provide three CSV datasets with raw data (contained in `raw_data` directory):
 2. `recommendations.csv` containing annotated and processed top-20 recommendations shown next to watched videos on YouTube.
 3. `home_page_results.csv` containing collected and processed results from homepage visits executed after watching videos.
 
-In addition, we provide two additional datasets with mapping of videos to their normalized labels (contained in `normalized_data` directory):
+We provide three additional datasets with mapping of videos to their normalized labels (contained in `normalized_data` directory):
 
 1. `encountered_videos.csv` containing normalized labels for the videos we encountered and then annotated during experiments. The file was obtained by running the `normalize-annotations.ipynb` notebook.
 2. `seed_videos.csv` containing the videos we used as seed for running the experiments, along with their assigned labels and topics.
