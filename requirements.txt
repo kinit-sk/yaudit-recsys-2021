@@ -1,6 +1,7 @@
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
 asttokens==2.0.8
+astunparse==1.6.3
 attrs==19.3.0
 Automat==0.8.0
 backcall==0.2.0
@@ -25,9 +26,12 @@ defusedxml==0.7.1
 distro==1.4.0
 distro-info===0.23ubuntu1
 entrypoints==0.3
+execnb==0.1.2
 executing==1.0.0
+fastcore==1.5.22
 fastjsonschema==2.16.1
 fonttools==4.37.1
+ghapi==1.0.2
 httplib2==0.14.0
 hyperlink==19.0.0
 idna==2.8
@@ -67,6 +71,7 @@ mistune==2.0.4
 more-itertools==4.2.0
 nbclient==0.6.7
 nbconvert==7.0.0
+nbdev==2.2.8
 nbformat==5.4.0
 nest-asyncio==1.5.5
 netifaces==0.10.4

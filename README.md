@@ -39,6 +39,7 @@ In addition, we provide two additional datasets with mapping of videos to their 
 
 1. `encountered_videos.csv` containing normalized labels for the videos we encountered and then annotated during experiments. The file was obtained by running the `normalize-annotations.ipynb` notebook.
 2. `seed_videos.csv` containing the videos we used as seed for running the experiments, along with their assigned labels and topics.
+3. `train.csv` contains the manually labeled videos we used for training the models in the extended version of the paper. Only `youtube_id` and `annotation` columns contain values; other columns needs to be filled via YouTube API.
 
 We also provide two additional datasets that contain aggregated data that includes automatically generated predictions using a machine learning model (contained in `predicted_data` directory):
 
@@ -134,4 +135,4 @@ There are five Jupyter Notebooks contained in this folder:
 1. `rq2-statistical-tests.ipynb` contains analyses related to the second research question discussed in the paper.
 1. `rq2-trends.ipynb` contains visualizations of changes in misinformation scores over the experiments discussed in the paper.
 1. `normalize-annotations.ipynb` contains code for obtaining the normalized labels for the videos we annotated using the raw data.
-1. `reimplemented-model-by-hou.ipynb` contains the reimplemented model by Hout et al discussed in the extended version of our paper.
+1. `reimplemented-model-by-hou.ipynb` contains the reimplemented model by Hout et al. discussed in the extended version of our paper.

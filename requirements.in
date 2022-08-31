@@ -11,3 +11,4 @@ seaborn
 sklearn
 jupyter
 xgboost
+nbdev
