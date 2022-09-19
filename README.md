@@ -22,26 +22,27 @@ This repository is structured in three folders:
 
 ## Source code for sockpuppeting bots
 
-See the README file under the `Code` folder to learn more.
+See the README file under the [`Code`](Code) folder to learn more.
 
 *Note:* In our experiments, the bot was running in Google Chrome browser version 88, with chromedriver version 88.0.4324.96. The python version used was 3.8.7 with the Dockerfile being based on Debian version 10.7.
 As adblock, we used uBlockOrigin, which is provided in the code as `.crx` file.
 
 ## Datasets
 
-We provide three CSV datasets with raw data (contained in `raw_data` directory):
+We provide three CSV datasets with raw data (contained in [`raw_data`](Data/raw_data/) directory):
 
 1. `search_results.csv` containing annotated and processed top-20 results for queries executed after watching videos on YouTube.
 2. `recommendations.csv` containing annotated and processed top-20 recommendations shown next to watched videos on YouTube.
 3. `home_page_results.csv` containing collected and processed results from homepage visits executed after watching videos.
 
-We provide three additional datasets with mapping of videos to their normalized labels (contained in `normalized_data` directory):
+We provide four additional datasets with mapping of videos to their normalized labels (contained in [`normalized_data`](Data/normalized_data) directory):
 
-1. `encountered_videos.csv` containing normalized labels for the videos we encountered and then annotated during experiments. The file was obtained by running the `normalize-annotations.ipynb` notebook.
+1. `encountered_videos.csv` containing normalized labels for the videos we encountered and then annotated during experiments. The file was obtained by running the [`normalize-annotations.ipynb`](Notebooks/normalize-annotations.ipynb) notebook.
 2. `seed_videos.csv` containing the videos we used as seed for running the experiments, along with their assigned labels and topics.
-3. `train.csv` contains the manually labeled videos we used for training the models in the extended version of the paper. Only `youtube_id` and `annotation` columns contain values; other columns needs to be filled via YouTube API.
+3. `train.csv` containing the manually labeled videos we used for training the models in the extended version of the paper. Only `youtube_id` and `annotation` columns contain values; other columns need to be filled via YouTube API (it can be retrieved using [`get-train-and-encountered-data.ipynb`](Notebooks/get-train-and-encountered-data.ipynb) notebook).
+4. `videos_metadata.csv` containing the videos for which we were able to retrieve metadata. Only `youtube_id`, `duration_seconds`, `duration_minutes` ,`duration_hours`, `encountered_home`, `encountered_search`, `encountered_recommend`, and `encountered_all` columns contain values; other columns need to be filled via YouTube API (it can be retrieved using [`get-train-and-encountered-data.ipynb`](Notebooks/get-train-and-encountered-data.ipynb) notebook).
 
-We also provide two additional datasets that contain aggregated data that includes automatically generated predictions using a machine learning model (contained in `predicted_data` directory):
+We also provide two additional datasets that contain aggregated data that includes automatically generated predictions using a machine learning model (contained in [`predicted_data`](Data/predicted_data/) directory):
 
 1. `recommendations_with_predicted_grouped.csv` containing misinformation score and ratio of annotated to automatically predicted labels for top-10 recommendations grouped by misinformation topic and sequence index within the experiment.
 2. `home_page_with_predicted_grouped.csv` containing misinformation score and ratio of annotated to automatically predicted labels for home page results grouped by misinformation topic and sequence index within the experiment.
@@ -131,9 +132,10 @@ The aggregated datasets for top-10 recommendations and home page results also co
 
 There are the following Jupyter Notebooks contained in this folder:
 
-1. `rq1-compare-results-with-hussein.ipynb` contains analyses related to the first research question discussed in the paper.
-1. `rq2-statistical-tests.ipynb` contains analyses related to the second research question discussed in the paper.
-1. `rq2-trends.ipynb` contains visualizations of changes in misinformation scores over the experiments discussed in the paper.
-1. `normalize-annotations.ipynb` contains code for obtaining the normalized labels for the videos we annotated using the raw data.
-1. `reimplemented-model-by-hou.ipynb` contains the reimplemented model by Hou et al. discussed in the extended version of our paper.
-1. `get-train-data.ipynb` contains code for downloading and processing videos' metadata and transcripts using YouTube's API.
+1. [`rq1-compare-results-with-hussein.ipynb`](Notebooks/rq1-compare-results-with-hussein.ipynb) contains analyses related to the first research question discussed in the paper.
+1. [`rq2-statistical-tests.ipynb`](Notebooks/rq2-statistical-tests.ipynb) contains analyses related to the second research question discussed in the paper.
+1. [`rq2-trends.ipynb`](Notebooks/rq2-trends.ipynb.ipynb) contains visualizations of changes in misinformation scores over the experiments discussed in the paper.
+1. [`normalize-annotations.ipynb`](Notebooks/normalize-annotations.ipynb) contains code for obtaining the normalized labels for the videos we annotated using the raw data.
+1. [`get-train-and-encountered-data.ipynb`](Notebooks/get-train-and-encountered-data.ipynb) contains code for downloading and processing videos' metadata and transcripts using YouTube's API.
+1. [`reimplemented-model-by-hou.ipynb`](Notebooks/reimplemented-model-by-hou.ipynb) contains the reimplemented model by Hou et al. discussed in the extended version of our paper.
+1. [`videos-statistics.ipynb`](Notebooks/videos-statistics.ipynb) contains code for computing descriptive statistics of the encountered videos presented in the paper.
