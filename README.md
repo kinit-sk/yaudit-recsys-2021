@@ -35,10 +35,11 @@ We provide three CSV datasets with raw data (contained in `raw_data` directory):
 2. `recommendations.csv` containing annotated and processed top-20 recommendations shown next to watched videos on YouTube.
 3. `home_page_results.csv` containing collected and processed results from homepage visits executed after watching videos.
 
-In addition, we provide two additional datasets with mapping of videos to their normalized labels (contained in `normalized_data` directory):
+We provide three additional datasets with mapping of videos to their normalized labels (contained in `normalized_data` directory):
 
 1. `encountered_videos.csv` containing normalized labels for the videos we encountered and then annotated during experiments. The file was obtained by running the `normalize-annotations.ipynb` notebook.
 2. `seed_videos.csv` containing the videos we used as seed for running the experiments, along with their assigned labels and topics.
+3. `train.csv` contains the manually labeled videos we used for training the models in the extended version of the paper. Only `youtube_id` and `annotation` columns contain values; other columns needs to be filled via YouTube API.
 
 We also provide two additional datasets that contain aggregated data that includes automatically generated predictions using a machine learning model (contained in `predicted_data` directory):
 
@@ -128,10 +129,11 @@ The aggregated datasets for top-10 recommendations and home page results also co
 
 ## Notebooks for data analysis
 
-There are five Jupyter Notebooks contained in this folder:
+There are the following Jupyter Notebooks contained in this folder:
 
 1. `rq1-compare-results-with-hussein.ipynb` contains analyses related to the first research question discussed in the paper.
 1. `rq2-statistical-tests.ipynb` contains analyses related to the second research question discussed in the paper.
 1. `rq2-trends.ipynb` contains visualizations of changes in misinformation scores over the experiments discussed in the paper.
 1. `normalize-annotations.ipynb` contains code for obtaining the normalized labels for the videos we annotated using the raw data.
-1. `reimplemented-model-by-hou.ipynb` contains the reimplemented model by Hout et al discussed in the extended version of our paper.
+1. `reimplemented-model-by-hou.ipynb` contains the reimplemented model by Hou et al. discussed in the extended version of our paper.
+1. `get-train-data.ipynb` contains code for downloading and processing videos' metadata and transcripts using YouTube's API.
