@@ -1,6 +1,6 @@
 # An Audit of Misinformation Filter Bubbles on YouTube: Bubble Bursting and Recent Behavior Changes
 
-This repository contains supplementary material for the paper published at ACM RecSys 2021 ([available here](https://dl.acm.org/doi/10.1145/3460231.3474241)) and an extended version of the same paper that was submitted to ACM TORS 2022 and is currently under review.
+This repository contains supplementary material for the paper published at ACM RecSys 2021 ([available here](https://dl.acm.org/doi/10.1145/3460231.3474241)) and an extended version of the paper that has been accepted for publication at ACM TORS journal.
 
 ### Citing the Paper:
 If you make use of any data or modules in this repository, please cite the following paper:
@@ -15,9 +15,9 @@ The negative effects of misinformation filter bubbles in adaptive systems have b
 
 This repository is structured in three folders:
 
-1. Code – source code for sockpuppeting bots
-2. Data – collected, processed and annotated datasets
-3. Notebooks – notebooks for data analysis containing results discussed in the paper
+1. [Code](Code) – source code for sockpuppeting bots
+2. [Data](Data) – collected, processed and annotated datasets
+3. [Notebooks](Notebooks) – notebooks for data analysis containing results discussed in the paper
 
 
 ## Source code for sockpuppeting bots
@@ -128,13 +128,14 @@ The aggregated datasets for top-10 recommendations and home page results also co
 | score | 0.11 | Average number code of the annotation normalized to range -1 to 1 for the considered videos |
 | annotated      |            | Ratio of manually annotated videos out of all considered. Labels for the remaining videos were automatically predicted using machine learning. |
 
+
 ## Notebooks for data analysis
 
 There are the following Jupyter Notebooks contained in this folder:
 
 1. [`rq1-compare-results-with-hussein.ipynb`](Notebooks/rq1-compare-results-with-hussein.ipynb) contains analyses related to the first research question discussed in the paper.
 1. [`rq2-statistical-tests.ipynb`](Notebooks/rq2-statistical-tests.ipynb) contains analyses related to the second research question discussed in the paper.
-1. [`rq2-trends.ipynb`](Notebooks/rq2-trends.ipynb.ipynb) contains visualizations of changes in misinformation scores over the experiments discussed in the paper.
+1. [`rq2-trends.ipynb`](Notebooks/rq2-trends.ipynb.ipynb) contains visualizations of changes in misinformation scores over the experiments discussed in the paper and computation of `DIFF-TO-LINEAR` measure.
 1. [`normalize-annotations.ipynb`](Notebooks/normalize-annotations.ipynb) contains code for obtaining the normalized labels for the videos we annotated using the raw data.
 1. [`get-train-and-encountered-data.ipynb`](Notebooks/get-train-and-encountered-data.ipynb) contains code for downloading and processing videos' metadata and transcripts using YouTube's API.
 1. [`reimplemented-model-by-hou.ipynb`](Notebooks/reimplemented-model-by-hou.ipynb) contains the reimplemented model by Hou et al. discussed in the extended version of our paper.
