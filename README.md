@@ -11,6 +11,12 @@ If you make use of any data or modules in this repository, please cite the follo
 
 The negative effects of misinformation filter bubbles in adaptive systems have been known to researchers for some time. Several studies investigated, most prominently on YouTube, how fast a user can get into a misinformation filter bubble simply by selecting "wrong choices" from the items offered. Yet, no studies so far have investigated what it takes to "burst the bubble", i.e., revert the bubble enclosure. We present a study in which pre-programmed agents (acting as YouTube users) delve into misinformation filter bubbles by watching misinformation promoting content (for various topics). Then, by watching misinformation debunking content, the agents try to burst the bubbles and reach more balanced recommendation mixes. We recorded the search results and recommendations, which the agents encountered, and analyzed them for the presence of misinformation. Our key finding is that bursting of a filter bubble is possible, albeit it manifests differently from topic to topic. Moreover, we observe that filter bubbles do not truly appear in some situations. We also draw a direct comparison with a previous study. Sadly, we did not find much improvements in misinformation occurrences, despite recent pledges by YouTube.
 
+## Note on reproducibility
+
+To support any future research in the field of auditing adaptive systems for misinformation or other phenomena, we publish in this repository all source code, collected and annotated data as well as data analysis notebooks. However, due to ethical concerns (see Section 4.7 in ACM TORS paper), we do not publish automatic annotations predicted by the trained machine learning models. In addition, we do not publish metadata (such as titles, description or transcripts) for the collected YouTube videos (only YouTube IDs are included in the dataset). However, we provide the source code to retrain the machine learning models as well as means to download the metadata using YouTube API. Please also note that the reproducibility may suffer to some extent due to the dynamic nature of the platform, where some of the videos we used for seeding or encountered may no longer be available.
+
+As to the machine learning models, we use two models from related works, namely by Hou et al. ([2019](https://doi.org/10.1145/3340555.3353763)) and by Papadamou et al. ([2022](https://ojs.aaai.org/index.php/ICWSM/article/view/19329)). We provide our own implementation for the former which can be found in this [notebook](Notebooks/reimplemented-model-by-hou.ipynb). For the latter, we reuse the [source code](https://github.com/kostantinos-papadamou/pseudoscience-paper) published by the authors. The modified version of their source code that is able to work with our dataset and set of labels can be found in a separate [GitHub repository](https://github.com/kinit-sk/pseudoscience-paper).
+
 ## Structure of repository
 
 This repository is structured in three folders:
@@ -18,7 +24,6 @@ This repository is structured in three folders:
 1. [Code](Code) – source code for sockpuppeting bots
 2. [Data](Data) – collected, processed and annotated datasets
 3. [Notebooks](Notebooks) – notebooks for data analysis containing results discussed in the paper
-
 
 ## Source code for sockpuppeting bots
 
