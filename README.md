@@ -6,7 +6,7 @@ This repository contains supplementary material for the paper *An Audit of Misin
 If you make use of any data or modules in this repository, please cite the following papers:
 > Matus Tomlein, Branislav Pecher, Jakub Simko, Ivan Srba, Robert Moro, Elena Stefancova, Michal Kompan, Andrea Hrckova, Juraj Podrouzek, and Maria Bielikova. 2021. An Audit of Misinformation Filter Bubbles on YouTube: Bubble Bursting and Recent Behavior Changes. In <i>Fifteenth ACM Conference on Recommender Systems</i> (<i>RecSys '21</i>). Association for Computing Machinery, New York, NY, USA, 1–11. DOI: https://doi.org/10.1145/3460231.3474241
 
-> Ivan Srba, Robert Moro, Matus Tomlein, Branislav Pecher, Jakub Simko, Elena Stefancova, Michal Kompan, Andrea Hrckova, Juraj Podrouzek, Adrian Gavornik, and Maria Bielikova. 2022. Auditing YouTube's Recommendation Algorithm for Misinformation Filter Bubbles. <i>ACM Transactions on Recommender Systems</i>. 1, 1. DOI: https://doi.org/10.1145/3568392
+> Ivan Srba, Robert Moro, Matus Tomlein, Branislav Pecher, Jakub Simko, Elena Stefancova, Michal Kompan, Andrea Hrckova, Juraj Podrouzek, Adrian Gavornik, and Maria Bielikova. 2023. Auditing YouTube’s Recommendation Algorithm for Misinformation Filter Bubbles. <i>ACM Transactions on Recommender Systems</i>. 1, 1, Article 6 (March 2023), 33 pages. DOI: https://doi.org/10.1145/3568392
 
 
 ## Abstract
